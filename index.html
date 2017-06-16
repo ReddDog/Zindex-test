@@ -1,1 +1,226 @@
-Home Page Test
+<style>
+/* http://getbootstrap.com/css/#grid-column-ordering */
+/* http://getbootstrap.com/css/#grid-media-queries  */
+
+@media (max-width: 768px) { /* small devices */
+    .hide-narrow {   
+       display:none;
+    }
+}
+
+@media (max-width: 768px) { /* small devices */
+    .narrow {   
+         width: 100%;
+    }
+}
+
+@media (min-width: 768px) { /* small devices */
+    .padding-5 {   
+        padding: 5px;
+    }
+}
+
+.letter-button {
+  width:90px;
+  height:90px;
+  font-size:3em;
+  margin:5px;
+}
+
+
+.weekday {
+  border-top: 2px solid #006747;
+  border-right: 2px solid green;
+  border-bottom: 2px solid #006747;
+  border-left: 2px solid black;
+  border-radius:2px;
+  background-color: black;
+  color: white;
+}
+
+#search-courses ul {
+  margin-left: -40px;
+}
+
+.loader {
+  border: 6px solid #006747;
+  border-radius: 50%;
+  border-top: 6px solid #006747;
+  border-right: 6px solid green;
+  border-bottom: 6px solid green;
+  border-left: 6px solid black;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin .2s linear infinite;
+  animation: spin .2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#search-loader {
+      display: none;
+      margin: 10px auto;
+    }
+  </style>
+
+<!-- below is CF code for low-vision 9 June 2017 -->
+<!-- temporarily change CF border of none to 5px so it is visible -->
+<style>
+
+      #roberto {
+        width: 100%;
+      }
+
+      #roberto input {
+        /*border: none;*/
+        border:5px solid green;
+        font-size: 5em;
+        text-align: center;
+        width: 100%;
+      }
+
+</style>
+
+
+<div class="container"><!-- first container -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="getHelpModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Help for This Page</h4>
+      </div>
+      <div class="modal-body">
+         <h3>Quick Help</h3>
+        <p>Have a specific question? We'll connect you to the right resource.</p>
+        <ul class="list-group">
+            <li class="list-group-item">Notes About This Page:&nbsp;&nbsp;<a href="#"></a>
+              <h5 style="color:green;">This information is based on real-time data generated on the following page: <a href="http://www.registrar.usf.edu/ssearch/search.php">http://www.registrar.usf.edu/ssearch/search.php</a>.</h5>
+               <h5 style="color:green;">Semester options are updated automatically.</h5> 
+            </li>
+            <li class="list-group-item"><span style="font-weight:bold;">FAQs&nbsp;&nbsp;</span><a href="#"></a>
+                <h5 style="color:green;">Question: What do the letter codes for Delivery Mean?</h5>
+                <h5>Answer: The letters reflect the delivery method.</h5>
+                <h5><span style="color:green;">W:</span>&nbsp;&nbsp;World Wide Web.</h5>
+                <h5><span style="color:green;">S:</span>&nbsp;&nbsp;Instructional Television.</h5>
+                <h5><span style="color:green;">T:</span>&nbsp;&nbsp;Telecourse.</h5>
+                <h5><span style="color:green;">V:</span>&nbsp;&nbsp;Videoconference.</h5>
+                <h5><span style="color:green;">A:</span>&nbsp;&nbsp;Audiocasette</h5>
+                <h5><span style="color:green;">M:</span>&nbsp;&nbsp;Instructional Materials</h5>
+                <h5>More Information: <a href="https://www.registrar.usf.edu/ssearch/data/delivery_methods.php">https://www.registrar.usf.edu/ssearch/data/delivery_methods.php</a>.</h5></h5>
+
+            </li>
+            <li class="list-group-item">For Emergencies:&nbsp;&nbsp;<span style="font-weight:bold;">Call 911 Immediately.</span>
+            </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+  <div class="row" id="lowvision-keyboard" style="display:none;">
+    <!-- adding aria-live="polite" causes buttons to be read while in text area -->   
+    <div class="input-group" style="display: table;">
+        <section id='roberto'>
+          <input type='text' id="course-inputlv" data-user-id="<?=$userID?>" autofocus>  
+          </section>         
+           <span class="input-group-btn">
+              <button style="font-size:50px;height:100px;margin-left:10px;margin-right:10px;" class="home-chat btn btn-success" type="button" id="course-lvbutton" name="course-lvbutton" data-arrival='<?=$arrival?>' data-private-status='<?=$privateStatus?>' data-user-id="<?=$userID?>">Ask</button>
+            </span>
+        <img style="margin-top:-20px;height:75px;width:50px;" class='speech-lv' id="microphone3" onclick="startDictation3('home')" src="../images/microphone.gif" />
+      
+                
+
+      </div><!-- input group -->           
+     
+    </div><!-- wrapper row low-vision keyboard and feedback -->  
+
+    <div class="row" id="custom-course-chooser-panel" style="padding-bottom:10px;padding-top:10px;"><!-- encompasses all course selection options-->
+       
+            <div class="col-md-6">
+                <h2 class="lv-help">USFSP Course Search</h2>
+                <h4 class="lv-help" style="display:none;">Press&nbsp;<span class="fake-ctrl" style="background-color:black;color:white;padding:7px 10px 7px 7px;border-radius:4px;">Ctrl</span>&nbsp;Key to cycle through alternates.</h4> 
+            </div><!-- closes col md 12for h1 title area-->
+
+            <div class="col-md-6">
+               <button id="courses-lowvision" class="lowvision btn btn-success" type="button" aria-label="low-vision" aria-describedby="lowVision">Low Vision Help</button>   
+            </div>
+
+    </div><!-- row --> 
+
+    <div class="row"><!-- new row for question search -->
+
+           <div class="col-md-4 hide-narrow">
+                <div  class="jumbotron hp-chat hp-intro">
+                    <h4>When looking for course information, try the following:</h4> 
+                    <h5><span style="color:green;">Four-digit course numbers (CRS), Department (Three Letters), Course Title, or the Instructor's name.</span>
+                    </h5>                 
+                </div><!-- jumbotron -->
+                   
+            </div><!-- col-md-4 --> 
+
+            <div class="col-md-8">
+
+                <div class="jumbotron hp-chat">
+                  <!-- changed input id from course-input to transcript -->
+                    <div class="input-group" style="display: table;">
+                      <input type="text" id="course-input" class="form-control" name="course-input" data-user-id="<?=$userID?>" placeholder="Ask your Course question here.">
+                         <span class="input-group-btn">
+                          <button style="margin-top:-1px;" class="home-chat btn btn-default" type="button" id="input2" name="input2" data-arrival='<?=$arrival?>' data-private-status='<?=$privateStatus?>' data-user-id="<?=$userID?>">Ask Now</button>
+                        </span>
+                        <img style="margin-top:-20px;" class='speech' id="microphone" onclick="startDictation2('home')" src="../images/microphone.gif" /> 
+                    </div><!-- input group -->
+                  </div><!-- jumbotron hp-chat -->
+
+                <div id='search-loader' class="loader"></div> 
+               
+                    <div id="custom-search-step-1" style="display:none;">                       
+                        <div id="institution-step" class="col-md-2">
+                         <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle narrow" type="button" id="campus-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Campus" name="Campus">Campus
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu narrow" role="menu" aria-labelledby="campus-menu">
+                              <li id="i-sarasota"><a role="menuitem" data-campus="usfm" href="#usfm-campus">Sarasota</a></li>
+                              <li id="i-stpete"><a role="menuitem" data-campus="usfsp" href="#usfsp-campus">St. Petersburg</a></li>
+                              <li id="i-tampa"><a role="menuitem" data-campus="tampa" href="#tampa-campus">Tampa</a></li>
+                              </ul>
+                          </div><!-- dropdown -->     
+                        </div><!-- col sm-4 -->
+
+                        <div class="col-md-2">        
+                          <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle narrow" type="button" id="online-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Online" name="Online">Online
+                            <span class="caret"></span></button>
+                              <ul class="dropdown-menu narrow" role="menu" aria-labelledby="online-menu">
+                                <li class="active" data-delivery="4" id="delivery-format1"><a role="menuitem" data-format="only-online" href="#format1">Only Online</a></li>
+                                <li id="delivery-format2"><a role="menuitem"  data-format="all-courses" href="#format2">All Courses</a></li>
+                              </ul>
+                         </div><!-- dropdown -->
+                        </div><!-- col md-2 -->
+
+                        <div id="semester-chooser" class="col-md-2"></div><!-- col md-2-->  
+
+                        <div id='response-with-result2' class="col-md-2">
+                            <button class="start-a-chat btn btn-default narrow" type="button" onclick="window.location.href='<?=$p?>/chat/'">Start a Chat</button> 
+                            <!-- <button class="browse-for-answers btn btn-default" type="button" onclick="window.location.href='<?=$p?>/infoQStatus/'">Browse for an Answer</button> -->
+                        </div><!-- response with result2 -->
+
+              </div><!-- custom-search-step-1-->  
+             </div><!-- col-md-8 --> 
+        <div class="col-md-4 hide-narrow"></div>
+       <div id='search-courses' class="col-md-8"></div>
+</div><!-- closes container as of 9 March 2017 -->      
+
+
+
+
+
+

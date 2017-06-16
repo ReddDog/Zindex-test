@@ -1,3 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title property="name">Clickable Example</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="stylesheet" href="">
+</head>
+  <body id="<?=$bodyID?>" data-path="<?=$p?>/">
+    <main><!-- necessary for screen readers -->
+		<nav class="navbar">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span>Menu</span>
+              </button>
+
+              <a class="navbar-brand" href="https://www.usfsp.edu"><img class="usfsp-logo" src="<?=$p?>/images/USFSP-v-black.png" alt="USFSP Logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <!-- Sharon added role="navigation" for screenreaders -->
+                <li class="<?=$activeDashboard?>"><a href="<?=$p?>/question/">Ask a Question <span class="sr-only">(current)</span></a></li>
+                
+                <li class="<?=$activeChat?>"><a href="<?=$p?>/chat/">Chat</a></li>
+                <li class="<?=$activeCourses?>"><a href="<?=$p?>/courses/">Courses</a></li>
+                <!-- <li class="<?=$activeInfo?> dropdown"><a href="<?=$p?>/info/">Information</a> -->
+                <!-- SA 4 Jan 17 needs consulting with Casey -->
+                <li class='dropdown'>
+                  <a href='' class='dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' aria-labeledby='dropdown-list'>Information<span class='caret'></span></a>
+                  <ul class='dropdown-menu'>
+                    <li><a href='../infoEvents/'>Events</a></li>
+                    <li><a href='../infoForms/'>Forms</a></li>
+                    <li><a href='../infoPhones/'>Phone and FAX Numbers</a></li>
+                    <li><a href='../infoMyLocation/'>Phone GeoLocation</a></li>                   
+                    <li><a href='../infoQStatus/'>Recent Questions</a></li>
+                    <li><a href='../infoHours/'>Regular Office Hours </a></li>
+                    <li><a href='../infoSpecialHours/'>Special Office Hours</a></li>
+                   <li><a href='../infoReports/'>USFSP Reports</a></li>           
+                  </ul>
+                </li>
+
+                <?php
+
+                  if (access_check(array(5))) {
+
+                    echo "<li class='dropdown'>";
+                    echo "<a href='' class='dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' aria-labeledby='dropdown-list'>Management<span class='caret'></span></a>";
+                    echo "<ul class='dropdown-menu'>";
+                    echo "<li><a href='".$p."/guideKeyword'>Keyword Guide</a></li>";
+                    echo "<li><a href='".$p."/roleMatrix'>Role Matrix</a></li>";
+                    echo "<li role='separator' class='divider'></li>";
+
+                    if (access_check(array(10))) {
+                      echo "<li class='<?=$activeChatRecords?>'><a href='".$p."/chatManagement/'>Student Questions</a></li>";
+                      echo "<li class='<?=$activeChatRecords?>'><a href='".$p."/userManagement/'>People</a></li>";
+                      echo "<li class='<?=$activeChatRecords?>'><a href='".$p."/unitManagement/'>Groups</a></li>";
+                      echo "<li class='<?=$activeChatRecords?>'><a href='".$p."/eventManagement/'>Events</a></li>";
+
+                      echo "<li role='separator' class='divider'></li>";
+                      echo "<li><a href='".$p."/analytics-data/localhostExampleOne.csv'>Analytics Example One</a></li>";
+                      echo "<li><a href='".$p."/analytics-data/DataGraphsExampleTwo.docx'>Analytics Example Two</a></li>";
+
+                    }
+
+                    echo "</ul></li>";
+                 
+                 }
+
+                 ?>
+              
+              </ul>
+              <!-- Casey to add his personal style to the Get Help button -->
+              <ul class="nav navbar-nav navbar-right">
+
+                 <li>
+                <?php if (!access_check(array(1))) { ?>
+                  <a href="<?=$p?>/login/?tab=login-to-account" class="linkBtn">Log In / Register</a>
+                <?php } else { ?>
+
+                  <span class='txt'>Hello, <a href="<?=$p?>/profile/"><?=$user['first_name']?></a>.</span>
+                  
+                  <?php echo notification('count'); ?>
+
+                  <a href="<?=$p?>/process/logout" class="linkBtn">Log Out</a>
+                <?php } ?>
+
+<a href='#' class='linkBtn getHelp' data-toggle="modal" data-target="#getHelpModal" type="button" class="btn btn-lg btn-success" value="get-help-button" name="get-help-button" id="get-help-button">Get Help</a>
+
+                </li>
+              </ul>
+
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>    	
 <style>
 /* http://getbootstrap.com/css/#grid-column-ordering */
 /* http://getbootstrap.com/css/#grid-media-queries  */

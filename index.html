@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+    <meta charset="utf-8">
+    <title>Developer Test</title>
+    <meta http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="http://www.usf.edu/innovative-education/">
+    <meta property="twitter:card" content="summary">
+            <!--[if lt IE 9]>
+              <script>
+                document.createElement("header" );
+                document.createElement("footer" );
+                document.createElement("section"); 
+                document.createElement("aside"  );
+                document.createElement("nav"    );
+                document.createElement("article"); 
+                document.createElement("hgroup" ); 
+                document.createElement("time"   );
+              </script>
+              <noscript>
+                 <strong>Warning !</strong>
+                 Because your browser does not support HTML5, some elements are created using JavaScript.
+                 Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
+              </noscript>
+            <![endif]-->
+       
+      <link type="text/css" rel="stylesheet" media="screen"  href="developertest.css">
+      <link href="https://fonts.googleapis.com/css?family=Six+Caps|Open+Sans:400,400i" rel="stylesheet">
+	</head>
+	<body>
+    <div itemscope itemtype="http://schema.org/EducationalOrganization">
+    <!-- no skip link implemented in this test page, as the main sectioning element is the first significant content experienced by users.  Normally there would be a skip link from topmost area to main -->
+    <main><!-- necessary for screen readers -->
+      <!-- banner should be reserved for logo -->
+      <div class="main-background"> 
+         <div class="row-wrapper">             
+          <div id="inside-usf" role="banner">
+            <header>        
+              <h2>INSIDE</h2>
+              <span id="usf-box">USF</span> 
+            <header>
+              <h3 id="need-know"><i>Need-to-know news for all USF system employees</i></h3>
+          </div><!-- closes id inside-usf -->
+       </div><!-- row-wrapper -->
+
+      <div class="row-wrapper"> 
+
+           <section>
+             <div id="dancer"> 
+
+              <p class="scene-campus">
+                <h3 id="scene-campus3">Scene on Campus</h3>
+                <h6 id="scene-campus6">The 2013 DanceUSF Fall Dance Concert, featuring pieces choreographed by USF faculty and performed by students, opened last week. <span itemprop="schedule"><a aria-label="danceschedule" class="f1-note" href="http://theatreanddance.arts.usf.edu/content/templates/?z=9&a=3733">Click here</a></span> for showtimes and performance information.</h6>
+              </p><!-- class scene-campus -->
+              <span id="green-triangle" role="button" tabindex="0" onkeydown="if(event.keyCode==13 || event.keyCode==32) alert('You activated me with the keyboard');" onclick="alert('You clicked me with the mouse');"><em id="white-cross">+</em></span>  
+
+            </div><!-- dancer -->
+
+      </div><!-- row wrapper -->
+
+
+      <div class="row-wrapper"> 
+              <div id="sidebar-left">
+                <h3 class="gray-bottom"><u>Human Resources</u></h3>
+                <h4><a href="http://news.usf.edu/article/templates/?a=5871&z=209">Spring 2014 Employee Tuition Program</a></h4>
+                <h5>Human Resources is now accepting request forms for the spring semester.</h5>
+                <h4><a href="http://usfweb2.usf.edu/human-resources/giving-tree/">2013 USF Employee Community Giving Tree</a></h4>
+                <h5>Help make the season special for all of the families in our USF community.</h5>
+                <h3 class="gray-bottom"><u>Student Affairs</u></h3>
+                <h4><a href="http://www.tampabay.com/news/education/college/usfs-university-lecture-series-is-in-the-hands-of-the-students/2139286">Tonight: University Lecture Seires Presents Marlee Matlin</a></h4>
+                <h5>The Acadamey-Award-winning actress will cover topics of inclusion, diversity, and access throughout her life experiences.</h5>
+                <h4><a href="https://www.facebook.com/events/454020014710198">Eleventh Annual Tunnel of Oppression</a></h4>
+                <h5>Walk the tunnel with the students and learn how oppression affects us all.</h5>
+              </section>
+            </div><!-- sidebar-left -->
+
+            <div id="sidebar-right"> 
+              <aside>
+                <!-- this content contains only nonsense, imaginary text so we make it an aside element rather than section -->
+                <figure class="sidebar-aside">
+                  <img
+                  src="images/Copied303X202.jpg"
+                  alt="">
+                  <!-- image is decorative only in this case so we spare the screen-readers no alt description --> 
+                  <figcaption></figcaption>
+                </figure>
+                <aside class="sidebar-aside">
+                <h4 id="lorem">Lorem ipsum dolor sit amet</h4>
+                <h5 id="elit">consectetur adipiscing elit. Sed bibendum condi mentum lacus vel dictum. Fusce vel enim a tortor volutpat suscipit. Vesti bulum tincidunt luctus dore emet sis lorem ipsum dolor sit amet dictum.</h5>
+                <h6 id="fusce"><a href="http://www.lipsum.com/">Fusce vel enim</a></h6>
+              </aside>
+            </div><!-- sidebar-right -->
+        
+
+      </div><!-- row wrapper div -->
+
+    </div><!-- main background -->
+    </main>
+    <div itemscope itemtype="http://schema.org/subOrganization">
+    <footer id="helpinfo">
+          <p class="footer-content"><strong>Inside USF</strong> is published every Thursday by USF News. To contact us, <a aria-label="news" class="f1-note" href="mailto:ucm@usf.edu">click here.</a><br />
+          To submit content, please review the Inside USF Submission Guidelines.<p>
+          <p class="footer-content">For reasonable disability accommodations requests pertaining to this announcement, please contact the <span itemprop="name">USF ADA Coordinator</span><br /> at <span itemprop="telephone"><a aria-label="phone" class="f1-note" href="tel:+181397448616">813-974-8616</a></span> or <span itemprop="name">Students with Disabilities Services</span> at <span itemprop="telephone"><a aria-label="phone" class="f1-note" href="tel:+18139744309">813-974-4309;</a></span> FL Relay 711.</p>
+    </footer>
+    </div><!-- closes wrapper div for microdata itemtype subOrganization and HTML5 footer -->
+        <!-- References -->
+        <!-- overflow hidden bug with Chrome https://bugs.webkit.org/show_bug.cgi?id=29240 -->
+        <!-- http://web.mit.edu/jmorzins/www/fonts.html -->
+        <!-- https://developers.google.com/fonts/docs/technical_considerations -->
+        <!-- https://www.w3.org/TR/CSS/#css -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->
+        <!-- http://beta.caniuse.com/#feat=html5semantic -->  
+        <!-- https://www.w3.org/TR/wai-aria-practices/examples/landmarks/banner.html -->
+        <!-- https://html.spec.whatwg.org/multipage/semantics.html#the-footer-element --> 
+        <!-- https://www.w3.org/TR/wai-aria-practices/#keyboard -->
+        <!-- http://caniuse.com/#feat=css-mediaqueries --> 
+        <!-- https://www.w3.org/TR/css3-mediaqueries/ --> 
+        <!-- https://www.w3.org/TR/WCAG20-TECHS/H76.html -->
+        <!-- https://www.w3.org/TR/html-aria/ -->
+        <!-- https://www.w3.org/TR/html5/document-metadata.html#attr-meta-http-equiv -->
+        <!-- https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/consistent-behavior-no-extreme-changes-context.html -->
+        <!-- <meta http-equiv="refresh" content="0;URL='https://austin-2017.github.io'" /> -->
+        <!-- https://www.w3.org/TR/WCAG20-TECHS/H76.html -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Sectioning_root --> 
+    </div><!-- closes microdata div for itemtype="http://schema.org/EducationalOrganization"-->
+  </body>
+</html>

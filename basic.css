@@ -512,15 +512,14 @@ div#dancer {
 
 
 #scene-campus3 {
-  width: 400px;
-  height:auto;
   position: absolute;
-  line-height:25px;
-  left:20px;
-  bottom: 100px;
+  left:50px;
+  bottom: 180px;
   color:#9CCB3B;
+  font-size:6em;
+  line-height:25px;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  padding-left:20px;
+  padding-left:10px;
 }
 
 #scene-campus6 {
@@ -576,7 +575,7 @@ div#dancer {
     height: 292px;
     background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
-    background-color: orange;
+    background-color: purple;
     background-repeat: no-repeat;
     background-size: contain;
    }/*dancer*/

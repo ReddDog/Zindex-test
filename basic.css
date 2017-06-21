@@ -299,7 +299,7 @@ div#dancer {
     position:relative;
     width: 100%;
     height: 292px;
-    background-image: url('Alice_Sheppard.jpg');
+    background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
     background-color: black;
     background-repeat: no-repeat;
@@ -358,7 +358,7 @@ div#dancer {
     position:relative;
     width: 100%;
     height: 292px;
-    background-image: url('Alice_Sheppard.jpg');
+    background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
     background-color: black;
     background-repeat: no-repeat;
@@ -469,7 +469,7 @@ div#dancer {
     height: 292px;
     background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
-    background-color: black;
+    background-color: yellow;
     background-repeat: no-repeat;
     background-size: contain;
   }

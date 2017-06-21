@@ -469,7 +469,7 @@ div#dancer {
     height: 292px;
     background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
-    background-color: yellow;
+    background-color: black;
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -576,7 +576,7 @@ div#dancer {
     height: 292px;
     background-image: url('Annie-and-Ellie.jpg');
     background-position: right; 
-    background-color: black;
+    background-color: red;
     background-repeat: no-repeat;
     background-size: contain;
    }/*dancer*/
